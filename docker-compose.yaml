@@ -1,0 +1,9 @@
+services:
+  vue-todo-app:
+    build: .
+    working_dir: /app
+    environment:
+      - NODE_ENV=production
+    # Remember! ["host port" : "container port"]!
+    ports:
+      - "3010:80"
