@@ -19,8 +19,8 @@ env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: docker.io
   # github.repository as <account>/<repo>
-  IMAGE_NAME: $DOCKERHUB_REPOSITORY
-  DOCKERHUB_USER: $DOCKERHUB_USER
+  IMAGE_NAME: ${{ vars.DOCKERHUB_REPOSITORY }}
+  DOCKERHUB_USER: ${{ vars.DOCKERHUB_USERNAME }}
 
 
 jobs:
