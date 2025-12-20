@@ -1,0 +1,26 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+    "name": "Vue Todo List",
+    "image": "mcr.microsoft.com/devcontainers/javascript-node:20", // Node.js 20 image
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "20"
+        }
+    },
+    "forwardPorts": [
+        5173
+    ], // Forward Vite's default port
+    "postCreateCommand": "npm install", // Install dependencies after container creation
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "esbenp.prettier-vscode",
+                "dbaeumer.vscode-eslint",
+                "Vue.volar",
+                "Vue.vscode-typescript-vue-plugin",
+                "github.vscode-github-actions"
+            ]
+        }
+    }
+}
