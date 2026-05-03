@@ -2,6 +2,8 @@
 import AppPriorityDropbox from './Form components/AppPriorityDropbox.vue';
 import { useTodoListStore } from '@/stores/ToDoList';
 import { useTodoTextStore } from '@/stores/ToDoString';
+import AppInputBox from './Form components/AppInputBox.vue';
+import AppSaveButton from './Form components/AppSaveButton.vue';
 
 const TodoListStore = useTodoListStore()
 const TextStore = useTodoTextStore()
@@ -18,12 +20,10 @@ const saveItem = () => {
 
 <template>
     <form class="add-item-form" @submit.prevent="saveItem">
-    <input v-model="TextStore.title" type="text" placeholder="Add an item here"></input>
-
-    <AppPriorityDropbox></AppPriorityDropbox>
-
-    <button class="btn btn-primary" v-bind:disabled="TextStore.title.length < 3">
-        Save item
-    </button>
+        <div class="flex flex-row gap-16 items-end">
+            <AppInputBox></AppInputBox>
+            <AppPriorityDropbox></AppPriorityDropbox>
+            <AppSaveButton></AppSaveButton>
+        </div>
   </form>
 </template>
