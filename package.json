@@ -16,11 +16,11 @@
 		"vue-router": "^5.0.1"
 	},
 	"devDependencies": {
-		"@cloudflare/vite-plugin": "^1.25.0",
+		"@cloudflare/vite-plugin": "^1.33.2",
 		"@vitejs/plugin-vue": "^6.0.3",
 		"vite": "^7.3.2",
 		"vite-plugin-vue-devtools": "^8.0.5",
-		"wrangler": "^4.65.0"
+		"wrangler": "^4.85.0"
 	},
 	"engines": {
 		"node": "^20.19.0 || >=22.12.0"
