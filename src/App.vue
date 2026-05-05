@@ -13,13 +13,15 @@ const isDark = useDark()
         <AppTitle></AppTitle>
     </header>
 
-    <body >
+    <body>
         <div
             class="flex items-center justify-center h-full w-full"
             :class="isDark ? ' bg-gray-900' : 'bg-white'"
         >
             <div 
-                class="flex flex-col border-8 rounded-4xl shadow-2xl w-[55%] h-[45%] gap-8 items-center justify-center px-8 py-4"
+                class="flex flex-col border-8 rounded-4xl shadow-2xl gap-8 items-center justify-center py-8
+                    max-w-3xl md:w-[85%] w-[95%] 
+                    lg:max-h-150 md:max-h-180 max-h-[90%]"
                 :class="isDark ? 'bg-gray-600 border-gray-500 shadow-gray-700' : 'bg-gray-200 border-gray-300 shadow-gray-400'"    
             >
                 <AppForm></AppForm>
@@ -32,8 +34,8 @@ const isDark = useDark()
 
 <style lang="css">
 body    {
-    background: #effffc;
-    height: 95vh;
+    background: #fff;
+    height: 90vh;
     width: 100vw;
     
     /* Fonts */

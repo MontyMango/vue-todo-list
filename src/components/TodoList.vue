@@ -3,31 +3,36 @@ import { useDark } from '@vueuse/core';
 const isDark = useDark()
 
 import { useTodoListStore } from '@/stores/ToDoList';
+import AppListItem from './Todo List components/AppListItem.vue';
+import AppDisplayPriority from './Todo List components/AppDisplayPriority.vue';
 const { todolist, toggleClickedItem } = useTodoListStore();
 </script>
 
 <template>
   <div 
-    class=" w-2xl max-h-[50%] overflow-scroll"
+    class="max-h-[50%] overflow-scroll md:w-xl w-full h-max"
     :class="isDark ? 'bg-gray-300' : 'bg-gray-200'"
   >
-    <ul>  
-        <li
-            v-for="item in todolist"
-            @click="toggleClickedItem(item)"
-            class="cursor-pointer text-lg p-0.5"
-            :class="{
-              lowpriority: item.priority === 'low',
-              mediumpriority: item.priority === 'medium',
-              highpriority: item.priority === 'high',
-              strikeout: item.done
-            }"
-        >
-            {{ item.title }} - [{{ item.priority }} priority] 
-        </li>
+    <ul>
+      <li
+        v-for="item in todolist"
+        @click="toggleClickedItem(item)"
+        class="flex flex-row cursor-pointer items-center md:p-0.5 p-1 md:ml-0 ml-5 
+          md:text-lg text-xl"
+        :class="{
+            lowpriority: item.priority === 3,
+            mediumpriority: item.priority === 2,
+            highpriority: item.priority === 1,
+            strikeout: item.done
+        }"
+      >
+        <AppListItem :listItem="item"></AppListItem>
+        <AppDisplayPriority :PriorityNumber="item.priority"></AppDisplayPriority>
+      </li>
     </ul>
   </div>
 </template>
+
 
 <style lang="css" scoped>
 /* LOW PRIORITY */

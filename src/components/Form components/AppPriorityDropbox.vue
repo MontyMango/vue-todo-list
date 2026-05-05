@@ -7,9 +7,9 @@ const TextStore = useTodoTextStore();
   <div class="flex flex-col">
     <p class="font-bold">Priority</p>
     <select class="select" v-model="TextStore.priority" >
-      <option value="low">Low</option>
-      <option value="medium">Medium</option>
-      <option value="high">High</option>
+      <option value=3>Low</option>
+      <option value=2>Medium</option>
+      <option value=1>High</option>
     </select>
   </div>
 </template>
