@@ -5,6 +5,7 @@ const isDark = useDark()
 import { useTodoListStore } from '@/stores/ToDoList';
 import AppListItem from './Todo List components/AppListItem.vue';
 import AppDisplayPriority from './Todo List components/AppDisplayPriority.vue';
+import { ref } from 'vue';
 const { todolist, toggleClickedItem } = useTodoListStore();
 </script>
 
@@ -16,6 +17,7 @@ const { todolist, toggleClickedItem } = useTodoListStore();
     <ul>
       <li
         v-for="item in todolist"
+        :key="item.id"
         @click="toggleClickedItem(item)"
         class="flex flex-row cursor-pointer items-center md:p-0.5 p-1 md:ml-0 ml-5 
           md:text-lg text-xl"
@@ -38,54 +40,32 @@ const { todolist, toggleClickedItem } = useTodoListStore();
 /* LOW PRIORITY */
 .lowpriority {
   color: #727272;
-  transition: color 1s ease;    /* Fades from red to black*/
+  transition: color 1s ease;   
   transition: background-color 1s ease;    /* Fades from red to black*/
 }
 .lowpriority:hover {
   background-color: #c2f7ff54;
-}
-.lowpriority.strikeout {
-  color: #9a9a9a;
-}
-.lowpriority.strikeout:hover {
-    color: #767676;
-    background-color: #dddddd14;
 }
 
 /* MEDIUM PRIORITY */
 .mediumpriority {
   color: #254243;
   transition: color 0.5s ease;    /* Fades from red to black*/
-  transition: background-color 1s ease;  /* Fades from red to black*/
+  transition: background-color 1s ease;  /* Fades from gray to a lighter gray */
 }
 .mediumpriority:hover {
   color: #000000;
-  background-color: #e5e4e456;
-  transition: color 0.5s ease;      /* Fades from red to black*/
-}
-.mediumpriority.strikeout {
-  color: #9a9a9a;
-}
-.mediumpriority.strikeout:hover {
-  color: #767676;
-  background-color: #dddddd14;
+  background-color: rgba(82, 82, 82, 0.1);
 }
 
 /* HIGH PRIORITY */
 .highpriority {
   color: #ff534d;
-  transition: background-color 1s ease;    /* Fades from red to black*/
+  transition: background-color 1s ease;    /* Fades from red to black */
 }
 .highpriority:hover {
   /* color: #2e0200; */
   background-color: #ff938f82;
-}
-.highpriority.strikeout {
-  color: #9a9a9a;
-}
-.highpriority.strikeout:hover {
-  color: #767676;
-  background-color: #dddddd14;
 }
 
 /* STRIKEOUT */
@@ -97,5 +77,19 @@ const { todolist, toggleClickedItem } = useTodoListStore();
   color: #8795a1;
   background-color: #dedede1e;
 }
+.lowpriority.strikeout,
+.mediumpriority.strikeout,
+.highpriority.strikeout
+ {
+  color: #9a9a9a;
+}
+.lowpriority.strikeout:hover,
+.mediumpriority.strikeout:hover,
+.highpriority.strikeout:hover
+ {
+    color: #767676;
+    background-color: #dddddd14;
+}
+
 
 </style>

@@ -1,5 +1,4 @@
 <script setup lang="tsx">
-import { ref } from 'vue';
 import TodoList from './components/TodoList.vue';
 import AppForm from './components/AppForm.vue';
 import AppTitle from './components/AppTitle.vue';
@@ -35,7 +34,7 @@ const isDark = useDark()
 <style lang="css">
 body    {
     background: #fff;
-    height: 90vh;
+    height: 94vh;
     width: 100vw;
     
     /* Fonts */
