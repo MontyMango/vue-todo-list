@@ -3,16 +3,18 @@ import { ref } from "vue";
 
 
 // TodoText Store 
-export const useTodoTextStore = defineStore('todostring', {
-    state: () => ({
-        priority: ref(2),
-        title: ref('')
-    }),
-    getters: { },
-    actions: {
-        resetTextStore() {
-            this.priority = 2;
-            this.title = "";
-        },
+export const useTodoTextStore = defineStore('todostring', () => {
+    const priority = ref(2);
+    const title = ref('');
+
+    function resetTextStore()   {
+        priority.value = 2;
+        title.value = '';
+    }
+
+    return {
+        priority,
+        title,
+        resetTextStore
     }
 });

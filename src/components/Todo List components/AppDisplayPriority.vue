@@ -6,7 +6,7 @@ const { PriorityNumber } = defineProps({
 })
 
 const priorityText = computed(() => {
-    console.log(PriorityNumber)
+    // console.log(PriorityNumber)
     switch (PriorityNumber) {
         case 1:
             return 'High'

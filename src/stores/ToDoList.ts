@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import { useStorage } from "@vueuse/core";
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import type { ListItem } from "../../types";
 
 // TodoList Store
@@ -25,9 +25,9 @@ export const useTodoListStore = defineStore('todolist', () => {
     localStorage,
   );
   const todoCount = useStorage("todoCount", ref(4), localStorage);
-  const todoTasksFinished = ref(todolist.value.forEach((item) =>  {
-    item.done == true
-  }));
+  const todoTasksFinished = computed(() =>
+    todolist.value.filter((item) => item.done).length
+  );
 
   function saveItemTotodolist(title: string, itemPriority: number)  {
     todolist.value.push({
@@ -44,9 +44,6 @@ export const useTodoListStore = defineStore('todolist', () => {
 
   function toggleClickedItem(item: ListItem)  {
       item.done = !item.done;
-      todoTasksFinished.value = todolist.value.filter(
-        (x) => x.done === true,
-      ).length;
   }
 
   return {
@@ -55,6 +52,6 @@ export const useTodoListStore = defineStore('todolist', () => {
     todoCount,
     todoTasksFinished,
     saveItemTotodolist,
-    toggleClickedItem
+    toggleClickedItem,
   };
 })
