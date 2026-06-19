@@ -21,7 +21,7 @@
 		"@vitejs/plugin-vue": "^6.0.3",
 		"daisyui": "^5.5.19",
 		"tailwindcss": "^4.2.4",
-		"vite": "^7.3.2",
+		"vite": "^8.0.16",
 		"vite-plugin-vue-devtools": "^8.0.5",
 		"wrangler": "^4.85.0"
 	},
