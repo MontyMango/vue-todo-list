@@ -17,13 +17,13 @@
 	},
 	"devDependencies": {
 		"@tailwindcss/vite": "^4.2.4",
-		"@cloudflare/vite-plugin": "^1.33.2",
+		"@cloudflare/vite-plugin": "^1.54.7",
 		"@vitejs/plugin-vue": "^6.0.3",
 		"daisyui": "^5.5.19",
 		"tailwindcss": "^4.2.4",
 		"vite": "^7.3.2",
 		"vite-plugin-vue-devtools": "^8.0.5",
-		"wrangler": "^4.85.0"
+		"wrangler": "^4.131.0"
 	},
 	"engines": {
 		"node": "^20.19.0 || >=22.12.0"
